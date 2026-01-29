@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            padding: 30px;
+            color: #333;
+        }
+        .info-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .info-row {
+            margin: 10px 0;
+        }
+        .label {
+            font-weight: bold;
+            color: #667eea;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        .success-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="success-icon">✅</div>
+            <h1>Registration Successful!</h1>
+        </div>
+        
+        <div class="content">
+            <p>Hi <strong>{{fullName}}</strong>,</p>
+            
+            <p>Welcome to our Patient Registration System! Your account has been created successfully.</p>
+            
+            <div class="info-box">
+                <h3 style="margin-top: 0; color: #667eea;">Your Registration Details</h3>
+                
+                <div class="info-row">
+                    <span class="label">Full Name:</span> {{fullName}}
+                </div>
+                
+                <div class="info-row">
+                    <span class="label">Email:</span> {{email}}
+                </div>
+                
+                <div class="info-row">
+                    <span class="label">Phone:</span> {{phone}}
+                </div>
+                
+                <div class="info-row">
+                    <span class="label">Registration Date:</span> {{registrationDate}}
+                </div>
+            </div>
+            
+            <p>If you have any questions or need assistance, please don't hesitate to contact our support team.</p>
+            
+            <p>Best regards,<br>
+            <strong>Patient Registration Team</strong></p>
+        </div>
+        
+        <div class="footer">
+            <p>This is an automated message, please do not reply to this email.</p>
+            <p>&copy; 2026 Patient Registration System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
