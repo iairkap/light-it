@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        const storageKey = 'vite-ui-theme';
+        const defaultTheme = 'light';
+        let theme;
+        try {
+          theme = localStorage.getItem(storageKey) || defaultTheme;
+        } catch (e) {
+          theme = defaultTheme;
+        }
+        const root = document.documentElement;
+        root.classList.remove('light', 'dark');
+        if (theme === 'system') {
+          const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          root.classList.add(systemTheme);
+        } else {
+          root.classList.add(theme);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* 
+  MEDI-CORE DESIGN SYSTEM (Tailwind v4 Configuration)
+  This block defines the primary design tokens for the application.
+*/
+@theme {
+  /* Colors */
+  --color-medicore-light: #fcfcfc; /* User requested light gray #fcfcfc */
+  --color-medicore-brand: #7C3AED;
+  --color-medicore-details: #7C3AED; /* Violet (Requests match brand/violet) */
+  --color-medicore-blue: #3B82F6;
+  --color-medicore-success: #10B981;
+  --color-medicore-warning: #F59E0B;
+  --color-medicore-error: #EF4444;
+  
+  /* Text Colors */
+  --color-medicore-text-primary: #111827;
+  --color-medicore-text-secondary: #4B5563;
+  --color-medicore-text-muted: #9CA3AF;
+  
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  
+  /* Shadows & Effects */
+  --shadow-medicore-card: 0 10px 15px -3px rgba(124, 58, 237, 0.05), 0 4px 6px -4px rgba(124, 58, 237, 0.05);
+  --shadow-inner-sm: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  
+  /* Radii */
+  --radius-medicore: 1.25rem;
+}
+
+@layer base {
+  .dark {
+    /* Colors Overrides for Dark Mode - User Custom Palette */
+    --color-medicore-light: #1d212f; /* Midnight Blue Main Background */
+    --color-medicore-brand: #5d29fa; /* Nostalgia Purple Accent */
+    --color-medicore-details: #5d29fa; /* Violet Details */
+    
+    --color-medicore-text-primary: #f8fafc; /* Slate 50 */
+    --color-medicore-text-secondary: #94a3b8; /* Slate 400 */
+    --color-medicore-text-muted: #64748b; /* Slate 500 */
+    
+    /* Card Backgrounds */
+    --color-white: #252a3b; /* Lighter Midnight for cards */
+    --color-gray-50: #1d212f; /* Match main background */
+    --color-gray-100: #334155; /* Slate 700 (for borders) */
+  }
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--color-medicore-light); /* Bind root/body bg to variable */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-medicore-light); /* CRITICAL: Ensure body background matches theme */
+  color: var(--color-medicore-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  width: 100%;
+}
